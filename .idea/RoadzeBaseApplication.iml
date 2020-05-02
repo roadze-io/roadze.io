@@ -28,6 +28,7 @@
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
+    <orderEntry type="library" name="7b9c30830f" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="actioncable (v6.0.2.2, rbenv: 2.7.0) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="actionmailbox (v6.0.2.2, rbenv: 2.7.0) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="actionmailer (v6.0.2.2, rbenv: 2.7.0) [gem]" level="application" />
@@ -86,6 +87,7 @@
     <orderEntry type="library" scope="PROVIDED" name="rails (v6.0.2.2, rbenv: 2.7.0) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="rails-dom-testing (v2.0.3, rbenv: 2.7.0) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="rails-html-sanitizer (v1.3.0, rbenv: 2.7.0) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="rails_real_favicon (v0.1.0, rbenv: 2.7.0) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="railties (v6.0.2.2, rbenv: 2.7.0) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="rake (v13.0.1, rbenv: 2.7.0) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="rb-fsevent (v0.10.4, rbenv: 2.7.0) [gem]" level="application" />
@@ -116,7 +118,6 @@
     <orderEntry type="library" scope="PROVIDED" name="websocket-extensions (v0.1.4, rbenv: 2.7.0) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="xpath (v3.2.0, rbenv: 2.7.0) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="zeitwerk (v2.3.0, rbenv: 2.7.0) [gem]" level="application" />
-    <orderEntry type="library" name="7b9c30830f" level="application" />
   </component>
   <component name="RModuleSettingsStorage">
     <LOAD_PATH number="0" />
