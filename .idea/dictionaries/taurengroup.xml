@@ -1,9 +1,11 @@
 <component name="ProjectDictionaryState">
   <dictionary name="taurengroup">
     <words>
+      <w>autoprefixer</w>
       <w>bootsnap</w>
       <w>byebug</w>
       <w>capybara</w>
+      <w>flexbox</w>
       <w>jbuilder</w>
       <w>roadze</w>
       <w>turbolinks</w>
