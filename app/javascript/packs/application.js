@@ -4,3 +4,6 @@ require("@rails/activestorage").start()
 require("channels")
 
 require("stylesheets/application.scss")
+
+require("alpinejs")
+require("jquery")
