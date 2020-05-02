@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="DataSourceManagerImpl" format="xml" multifile-model="true">
+    <data-source source="LOCAL" name="Rails RoadzeBaseApplication: test" uuid="12ed85cb-8afc-4c9c-91e9-d997567cf429">
+      <driver-ref>greenplum</driver-ref>
+      <synchronize>true</synchronize>
+      <imported>true</imported>
+      <remarks>$PROJECT_DIR$/config/database.yml</remarks>
+      <jdbc-driver>org.postgresql.Driver</jdbc-driver>
+      <jdbc-url>jdbc:postgresql://127.0.0.1:5432/RoadzeBaseApplication_test</jdbc-url>
+    </data-source>
+    <data-source source="LOCAL" name="Rails RoadzeBaseApplication: development" uuid="25014a2c-8c8b-4733-ad65-dd02fda9e4a7">
+      <driver-ref>greenplum</driver-ref>
+      <synchronize>true</synchronize>
+      <imported>true</imported>
+      <remarks>$PROJECT_DIR$/config/database.yml</remarks>
+      <jdbc-driver>org.postgresql.Driver</jdbc-driver>
+      <jdbc-url>jdbc:postgresql://127.0.0.1:5432/RoadzeBaseApplication_development</jdbc-url>
+    </data-source>
+    <data-source source="LOCAL" name="Rails RoadzeBaseApplication: production" uuid="b8101043-912e-4eee-9e61-18be3f135669">
+      <driver-ref>greenplum</driver-ref>
+      <synchronize>true</synchronize>
+      <imported>true</imported>
+      <remarks>$PROJECT_DIR$/config/database.yml</remarks>
+      <jdbc-driver>org.postgresql.Driver</jdbc-driver>
+      <jdbc-url>jdbc:postgresql://127.0.0.1:5432/RoadzeBaseApplication_production</jdbc-url>
+    </data-source>
+  </component>
+</project>
