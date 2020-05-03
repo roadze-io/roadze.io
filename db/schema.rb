@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_05_03_044643) do
+ActiveRecord::Schema.define(version: 2020_05_03_191108) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -47,6 +47,8 @@ ActiveRecord::Schema.define(version: 2020_05_03_044643) do
     t.boolean "internet_explorer"
     t.string "internet_explorer_version"
     t.string "browser_version"
+    t.float "lat"
+    t.float "lon"
   end
 
 end

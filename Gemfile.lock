@@ -88,6 +88,7 @@ GEM
     debug_inspector (0.0.3)
     erubi (1.9.0)
     ffi (1.12.2)
+    geocoder (1.6.3)
     globalid (0.4.2)
       activesupport (>= 4.2.0)
     i18n (1.8.2)
@@ -240,6 +241,7 @@ DEPENDENCIES
   browser
   byebug
   capybara (>= 2.15)
+  geocoder (~> 1.6, >= 1.6.3)
   image_processing (~> 1.2)
   jbuilder (~> 2.7)
   letter_opener

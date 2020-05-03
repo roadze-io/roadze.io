@@ -10,6 +10,8 @@
 #  internet_explorer         :boolean
 #  internet_explorer_version :string
 #  ip_address                :string
+#  lat                       :float
+#  lon                       :float
 #  mobile_device             :boolean
 #  page                      :string
 #  platform                  :string
