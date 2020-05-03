@@ -1,0 +1,40 @@
+<% if  @cookie != true %>
+<div class="cookie-banner fixed bottom-0 inset-x-0 pb-2 sm:pb-5">
+  <div class="max-w-screen-xl mx-auto px-2 sm:px-6 lg:px-8">
+    <div class="p-2 rounded-lg bg-blue-600 shadow-lg sm:p-3">
+      <div class="flex items-center justify-between flex-wrap">
+        <div class="w-0 flex-1 flex items-center">
+          <span class="flex p-2 rounded-lg bg-blue-800">
+            <div class="flex items-center justify-center h-6 w-6 text-white">
+              <i class="far fa-question fa-1x"></i>
+            </div>
+          </span>
+          <p class="ml-3 font-medium text-white truncate">
+            <span class="md:hidden">
+              This site uses cookies to help your experience.
+            </span>
+            <span class="hidden md:inline">
+              Attention: <span class="logo-font font-bold">roadze<span class="text-xs">.io</span></span> uses cookies to help your overall user experience, and to allow us to offer products specific to your region. <%= link_to "View cookie policy", '#', class: "text-white ml-3 hover:underline" %>
+            </span>
+          </p>
+        </div>
+        <div class="order-3 mt-2 flex-shrink-0 w-full sm:order-2 sm:mt-0 sm:w-auto">
+          <div class="rounded-md shadow-sm">
+            <%= form_for(@cookie_acceptance, remote: true) do |ca| %>
+              <%= ca.hidden_field :ip_address, value: params[:ip_address] %>
+              <%= ca.submit 'Accept', class: 'flex items-center justify-center px-4 py-2 border border-transparent text-sm leading-5 font-medium rounded-md text-blue-600 bg-white hover:text-blue-500 focus:outline-none focus:shadow-outline transition ease-in-out duration-150' %>
+            <% end %>
+          </div>
+        </div>
+        <div class="order-2 flex-shrink-0 sm:order-3 sm:ml-2">
+          <button type="button" class="-mr-1 flex p-2 rounded-md hover:bg-blue-500 focus:outline-none focus:bg-blue-500 transition ease-in-out duration-150" aria-label="Dismiss">
+            <svg class="h-6 w-6 text-white" stroke="currentColor" fill="none" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/>
+            </svg>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<% end  %>

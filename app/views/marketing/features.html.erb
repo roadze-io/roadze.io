@@ -1,0 +1,12 @@
+<div class="mx-auto max-w-7xl">
+  <%= render 'global/marketing/hero' %>
+  <div id="table" class="">
+    <%= render 'marketing/features/time_sheets' %>
+    <%= render 'marketing/features/load_board' %>
+    <%= render 'marketing/features/client_management' %>
+    <%= render 'marketing/features/fleet_management' %>
+  </div>
+  <%= render 'global/marketing/footer' %>
+  <%= render 'global/marketing/cookie_banner', cookie_acceptance: @cookie_acceptance %>
+</div>
+

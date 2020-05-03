@@ -1,0 +1,24 @@
+# == Schema Information
+#
+# Table name: bot_trackers
+#
+#  id            :bigint           not null, primary key
+#  bot_name      :string
+#  ip_address    :string
+#  matcher       :string
+#  search_engine :boolean
+#  created_at    :datetime         not null
+#  updated_at    :datetime         not null
+#
+
+one:
+  bot_name: MyString
+  search_engine: false
+  matcher: MyString
+  ip_address: MyString
+
+two:
+  bot_name: MyString
+  search_engine: false
+  matcher: MyString
+  ip_address: MyString

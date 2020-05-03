@@ -24,6 +24,12 @@ end
 # Application Routes
 Rails.application.routes.draw do
   constraints(Marketing) do
+    root 'marketing#home'
+    get 'features', to: 'marketing#features'
+    get 'pricing', to: 'marketing#pricing'
+    get 'company', to: 'marketing#company'
+
+    resources :cookie_acceptances, only: %i[new create]
   end
 
   constraints(Subscription) do

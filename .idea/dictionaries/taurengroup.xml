@@ -5,9 +5,11 @@
       <w>bootsnap</w>
       <w>byebug</w>
       <w>capybara</w>
+      <w>cookiebanner</w>
       <w>flexbox</w>
       <w>jbuilder</w>
       <w>roadze</w>
+      <w>semibold</w>
       <w>turbolinks</w>
       <w>webdrivers</w>
       <w>webpacker</w>
