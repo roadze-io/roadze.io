@@ -11,7 +11,7 @@ class MarketingController < ApplicationController
       ip_address: request.remote_ip,
       mobile_device: browser.device.mobile?,
       browser_used: browser.name,
-      page: 'Home Page', # Change this to @page_title after SEO Meta tags added
+      page: 'Home', # Change this to @page_title after SEO Meta tags added
       controller: 'Marketing',
       device_name: browser.device.name,
       platform: browser.platform,
@@ -24,18 +24,23 @@ class MarketingController < ApplicationController
     BotTracker.create(
       bot_name: browser.bot.name,
       search_engine: browser.bot.search_engine?,
-      matcher: browser.bot.why?
+      matcher: browser.bot.why?,
+      ip_address: request.remote_ip,
+      controller: 'Marketing',
+      action: 'Home'
     )
   end
 
   def features
     @cookie_acceptance = CookieAcceptance.new
+    params[:ip_address] = request.remote_ip
+
     PageVisit.create(
       visit_date: DateTime.now,
       ip_address: request.remote_ip,
       mobile_device: browser.device.mobile?,
       browser_used: browser.name,
-      page: 'Home Page', # Change this to @page_title after SEO Meta tags added
+      page: 'Features', # Change this to @page_title after SEO Meta tags added
       controller: 'Marketing',
       device_name: browser.device.name,
       platform: browser.platform,
@@ -48,18 +53,23 @@ class MarketingController < ApplicationController
     BotTracker.create(
       bot_name: browser.bot.name,
       search_engine: browser.bot.search_engine?,
-      matcher: browser.bot.why?
+      matcher: browser.bot.why?,
+      ip_address: request.remote_ip,
+      controller: 'Marketing',
+      action: 'Features'
     )
   end
 
   def pricing
     @cookie_acceptance = CookieAcceptance.new
+    params[:ip_address] = request.remote_ip
+
     PageVisit.create(
       visit_date: DateTime.now,
       ip_address: request.remote_ip,
       mobile_device: browser.device.mobile?,
       browser_used: browser.name,
-      page: 'Home Page', # Change this to @page_title after SEO Meta tags added
+      page: 'Pricing', # Change this to @page_title after SEO Meta tags added
       controller: 'Marketing',
       device_name: browser.device.name,
       platform: browser.platform,
@@ -72,18 +82,23 @@ class MarketingController < ApplicationController
     BotTracker.create(
       bot_name: browser.bot.name,
       search_engine: browser.bot.search_engine?,
-      matcher: browser.bot.why?
+      matcher: browser.bot.why?,
+      ip_address: request.remote_ip,
+      controller: 'Marketing',
+      action: 'Pricing'
     )
   end
 
   def company
     @cookie_acceptance = CookieAcceptance.new
+    params[:ip_address] = request.remote_ip
+
     PageVisit.create(
       visit_date: DateTime.now,
       ip_address: request.remote_ip,
       mobile_device: browser.device.mobile?,
       browser_used: browser.name,
-      page: 'Home Page', # Change this to @page_title after SEO Meta tags added
+      page: 'Company', # Change this to @page_title after SEO Meta tags added
       controller: 'Marketing',
       device_name: browser.device.name,
       platform: browser.platform,
@@ -96,7 +111,10 @@ class MarketingController < ApplicationController
     BotTracker.create(
       bot_name: browser.bot.name,
       search_engine: browser.bot.search_engine?,
-      matcher: browser.bot.why?
+      matcher: browser.bot.why?,
+      ip_address: request.remote_ip,
+      controller: 'Marketing',
+      action: 'Company'
     )
   end
 
