@@ -2,7 +2,7 @@
 <html>
   <%= render 'global/head_file/head' %>
   <% if admin_signed_in? %>
-    <body class="font-sans h-screen flex overflow-hidden bg-primary-bg" x-data="{ sidebarOpen: false }" @keydown.window.escape="sidebarOpen = false">
+    <body class="font-sans h-screen flex overflow-hidden bg-primary-bg pt-8" x-data="{ sidebarOpen: false }" @keydown.window.escape="sidebarOpen = false">
       <!-- Off-canvas menu for mobile -->
       <%= render "global/authenticated_admin/offscreen_nav" %>
 
