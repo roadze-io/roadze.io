@@ -3,7 +3,7 @@ module BackendPages
     before_action :authenticate_admin!
 
     def index
-      @bot_trackers = BotTracker.all
+      @pagy, @bot_trackers = pagy(BotTracker.all.order('bot_trackers.created_at DESC'))
     end
   end
 end
