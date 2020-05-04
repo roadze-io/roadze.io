@@ -1,0 +1,21 @@
+<%#
+  This template is i18n-ready: if you don't use i18n, then you can replace the pagy_t
+  calls with the actual strings ("&lsaquo; Prev", "Next &rsaquo;", "&hellip;").
+  The link variable is set to a proc that returns the link tag.
+  Usage: link.call( page_number [, text [, extra_attributes_string ]])
+-%>
+<% link = pagy_link_proc(pagy) -%>
+<%#                            -%><nav aria-label="pager" class="pagy_nav pagination relative z-0 inline-flex <%= local_assigns[:pagination_class] %>" role="navigation">
+  <% if pagy.prev                -%>  <span class="page prev relative inline-flex items-center px-4 py-2 border border-gray-300 text-sm leading-5 font-medium rounded-md text-gray-700 bg-white hover:text-gray-500 hover:bg-gray-100 focus:outline-none focus:shadow-outline-blue focus:border-blue-300 active:bg-gray-100 active:text-gray-700 transition ease-in-out duration-150"><%== link.call(pagy.prev, pagy_t('pagy.nav.prev'), 'aria-label="previous"') %></span>
+  <% else                        -%>  <span class="page prev disabled relative inline-flex items-center px-4 py-2 border border-gray-300 text-sm leading-5 font-medium rounded-md text-gray-700 bg-white hover:text-gray-500 hover:bg-gray-100 focus:outline-none focus:shadow-outline-blue focus:border-blue-300 active:bg-gray-100 active:text-gray-700 transition ease-in-out duration-150"><%== pagy_t('pagy.nav.prev') %></span>
+  <% end                         -%>
+  <% pagy.series.each do |item| # series example: [1, :gap, 7, 8, "9", 10, 11, :gap, 36] -%>
+    <%   if    item.is_a?(Integer) -%>
+    <%   elsif item.is_a?(String)  -%>
+    <%   elsif item == :gap        -%>
+    <%   end                       -%>
+  <% end                         -%>
+  <% if pagy.next                -%>  <span class="page next ml-3 relative inline-flex items-center px-4 py-2 border border-gray-300 text-sm leading-5 font-medium rounded-md text-gray-700 bg-white hover:text-gray-500 hover:bg-gray-100 focus:outline-none focus:shadow-outline-blue focus:border-blue-300 active:bg-gray-100 active:text-gray-700 transition ease-in-out duration-150"><%== link.call(pagy.next, pagy_t('pagy.nav.next'), 'aria-label="next"') %></span>
+  <% else                        -%>  <span class="page next disabled relative ml-3 relative inline-flex items-center px-4 py-2 border border-gray-300 text-sm leading-5 font-medium rounded-md text-gray-700 bg-white hover:text-gray-500 hover:bg-gray-100 focus:outline-none focus:shadow-outline-blue focus:border-blue-300 active:bg-gray-100 active:text-gray-700 transition ease-in-out duration-150"><%== pagy_t('pagy.nav.next') %></span>
+  <% end                         -%>
+<%#                            -%></nav>

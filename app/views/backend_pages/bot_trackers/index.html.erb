@@ -53,6 +53,30 @@
     </ul>
   </div>
   <div class="mt-8 mb-12">
-    <%== render partial: 'pagy/nav', locals: {pagy: @pagy} %>
+    <div class="mt-8 mb-12">
+      <% if @pagy.pages > 1 %>
+        <div class="mt-2 px-1 py-3 flex items-center justify-between">
+          <div class="hidden sm:flex-1 sm:flex sm:items-center sm:justify-center">
+            <div class="hidden">
+              <p class="text-sm leading-5 text-gray-700">
+                Showing
+                <span class="font-medium">1</span>
+                to
+                <span class="font-medium"><%= @bot_trackers.count %></span>
+                of
+                <span class="font-medium"><%= @pagy.count %></span>
+                results
+              </p>
+            </div>
+            <div>
+              <%= render partial: 'pagy/nav', locals: { pagy: @pagy } %>
+            </div>
+          </div>
+          <div class="block md:hidden">
+            <%= render partial: 'pagy/secondary_nav', locals: { pagy: @pagy } %>
+          </div>
+        </div>
+      <% end %>
+    </div>
   </div>
 </div>
