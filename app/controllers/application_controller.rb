@@ -1,6 +1,7 @@
 # frozen_string_literal: true
 
 class ApplicationController < ActionController::Base
+  include Pagy::Backend
   before_action :validate_cookie_presnece
 
   def validate_cookie_presnece

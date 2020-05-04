@@ -1,0 +1,74 @@
+<div class="hidden md:flex md:flex-shrink-0">
+  <div class="flex flex-col w-64">
+    <div class="flex items-center h-16 flex-shrink-0 px-6 bg-red-800 border-b border-gray-300">
+      <%= link_to root_url do %>
+        <h1 class="text-2xl text-white font-bold logo-font">roadze<span class="text-sm">.io</span></h1>
+      <% end  %>
+    </div>
+    <div class="h-0 flex-1 flex flex-col overflow-y-auto">
+      <!-- Sidebar component, swap this element with another sidebar if you like -->
+      <nav class="flex-1 py-4 bg-red-800">
+        <% if current_request?(controller: 'admin', action: ['dashboard']) %>
+          <%= link_to authenticated_admin_url do %>
+            <div class="bg-red-700 group flex items-center px-6 py-2 text-sm leading-5 text-white hover:text-gray-300 hover:bg-red-600 focus:outline-none focus:bg-red-700 transition ease-in-out duration-150">
+              <div class="mr-3 h-6 w-6 text-gray-400 group-hover:text-gray-300 group-focus:text-gray-300 transition ease-in-out duration-150">
+                <i class="far fa-tachometer-slow fa-lg"></i>
+              </div>
+              Dashboard
+            </div>
+          <% end %>
+        <% else %>
+          <%= link_to authenticated_admin_url do %>
+            <div class="group flex items-center px-6 py-2 text-sm leading-5 text-gray-300 hover:text-white hover:bg-red-700 focus:outline-none focus:bg-red-700 transition ease-in-out duration-150">
+              <div class="mr-3 h-6 w-6 text-gray-400 group-hover:text-gray-300 group-focus:text-gray-300 transition ease-in-out duration-150">
+                <i class="far fa-tachometer-slow fa-lg"></i>
+              </div>
+              Dashboard
+            </div>
+          <% end %>
+        <% end %>
+
+        <% if current_request?(controller: 'page_visits', action: ['index']) %>
+          <%= link_to backend_pages_page_visits_url do %>
+            <div class="bg-red-700 mt-1 group flex items-center px-6 py-2 text-sm leading-5 text-white hover:text-white hover:bg-red-700 focus:outline-none focus:bg-red-700 transition ease-in-out duration-150">
+              <div class="mr-3 h-6 w-6 text-gray-400 group-hover:text-gray-300 group-focus:text-gray-300 transition ease-in-out duration-150">
+                <i class="far fa-glasses fa-lg"></i>
+              </div>
+              Page visits
+            </div>
+          <% end %>
+        <% else %>
+          <%= link_to backend_pages_page_visits_url do %>
+            <div class="mt-1 group flex items-center px-6 py-2 text-sm leading-5 text-gray-300 hover:text-white hover:bg-red-700 focus:outline-none focus:bg-red-700 transition ease-in-out duration-150">
+              <div class="mr-3 h-6 w-6 text-gray-400 group-hover:text-gray-300 group-focus:text-gray-300 transition ease-in-out duration-150">
+                <i class="far fa-glasses fa-lg"></i>
+              </div>
+              Page visits
+            </div>
+          <% end %>
+        <% end %>
+
+        <% if current_request?(controller: 'bot_trackers', action: ['index']) %>
+          <%= link_to backend_pages_bot_trackers_url do %>
+            <div class="bg-red-700 mt-1 group flex items-center px-6 py-2 text-sm leading-5 text-white hover:text-white hover:bg-red-700 focus:outline-none focus:bg-red-700 transition ease-in-out duration-150">
+              <div class="mr-3 h-6 w-6 text-gray-400 group-hover:text-gray-300 group-focus:text-gray-300 transition ease-in-out duration-150">
+                <i class="far fa-robot fa-lg"></i>
+              </div>
+              Bot hits
+            </div>
+          <% end %>
+        <% else %>
+          <%= link_to backend_pages_bot_trackers_url do %>
+            <div class="mt-1 group flex items-center px-6 py-2 text-sm leading-5 text-gray-300 hover:text-white hover:bg-red-700 focus:outline-none focus:bg-red-700 transition ease-in-out duration-150">
+              <div class="mr-3 h-6 w-6 text-gray-400 group-hover:text-gray-300 group-focus:text-gray-300 transition ease-in-out duration-150">
+                <i class="far fa-robot fa-lg"></i>
+              </div>
+              Bot hits
+            </div>
+          <% end %>
+        <% end %>
+
+      </nav>
+    </div>
+  </div>
+</div>

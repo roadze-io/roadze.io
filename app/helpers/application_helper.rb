@@ -1,6 +1,7 @@
 # frozen_string_literal: true
 
 module ApplicationHelper
+  include Pagy::Frontend
   def current_request?(*requests)
     requests.each do |request|
       next unless request[:controller] == controller.controller_name

@@ -11,6 +11,8 @@
     "alpinejs": "^2.3.1",
     "autoprefixer": "^9.7.6",
     "channels": "^0.0.4",
+    "chart.js": "^2.9.3",
+    "chartkick": "^3.2.0",
     "jquery": "^3.5.0",
     "postcss-flexbugs-fixes": "^4.2.1",
     "tailwindcss": "^1.4.4",

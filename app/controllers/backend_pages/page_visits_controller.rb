@@ -1,7 +1,7 @@
 module BackendPages
   class PageVisitsController < ApplicationController
     def index
-      @page_visits = PageVisit.all
+      @pagy, @page_visits = pagy(PageVisit.all)
     end
   end
 end
