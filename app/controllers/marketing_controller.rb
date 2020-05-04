@@ -3,6 +3,10 @@ class MarketingController < ApplicationController
   Browser::Base.include(Browser::Aliases)
 
   def home
+    @page_title       = 'Home'
+    @page_description = 'roadze landing page'
+    @page_keywords    = 'Site, Home, Logistics, Load Board, Freight'
+
     @cookie_acceptance = CookieAcceptance.new
     params[:ip_address] = request.remote_ip
 
@@ -32,6 +36,10 @@ class MarketingController < ApplicationController
   end
 
   def features
+    @page_title       = 'development road map'
+    @page_description = 'roadze product road map'
+    @page_keywords    = 'Site, Features, Logistics, Load Board, Freight'
+
     @cookie_acceptance = CookieAcceptance.new
     params[:ip_address] = request.remote_ip
 
@@ -61,6 +69,10 @@ class MarketingController < ApplicationController
   end
 
   def pricing
+    @page_title       = 'Pricing'
+    @page_description = 'roadze pricing page'
+    @page_keywords    = 'Site, Pricing, Logistics, Load Board, Freight'
+
     @cookie_acceptance = CookieAcceptance.new
     params[:ip_address] = request.remote_ip
 
@@ -90,6 +102,10 @@ class MarketingController < ApplicationController
   end
 
   def company
+    @page_title       = 'About'
+    @page_description = 'roadze about page'
+    @page_keywords    = 'Site, About, Logistics, Load Board, Freight'
+    
     @cookie_acceptance = CookieAcceptance.new
     params[:ip_address] = request.remote_ip
 
