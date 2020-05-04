@@ -7,7 +7,6 @@ require("stylesheets/application.scss")
 
 require("alpinejs")
 require("jquery")
-require("js-cookie")
 
 require("typeface-inter")
 require("typeface-karla")
