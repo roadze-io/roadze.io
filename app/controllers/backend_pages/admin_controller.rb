@@ -5,6 +5,10 @@ module BackendPages
   # Admin dashboard controller
   class AdminController < ApplicationController
     before_action :authenticate_admin!
-    def dashboard; end
+    def dashboard
+      @visits_today = PageVisit.where("created_at >= ?", Time.zone.now.beginning_of_day).count
+      @visits_yesterday = PageVisit.where("created_at >= ?", Time.zone.now.yesterday).count
+      @delta = @visits_today - @visits_yesterday
+    end
   end
 end
