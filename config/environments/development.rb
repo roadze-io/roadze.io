@@ -1,6 +1,9 @@
 # frozen_string_literal: true
 
 Rails.application.configure do
+  config.hosts << "lvh.me"
+  config.hosts << "support.lvh.me"
+  config.hosts << "app.lvh.me"
   # Settings specified here will take precedence over those in config/application.rb.
 
   # In the development environment your application's code is reloaded on

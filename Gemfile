@@ -7,6 +7,7 @@ ruby '2.7.0'
 
 gem 'bootsnap', '>= 1.4.2', require: false
 gem 'browser'
+gem 'devise'
 gem 'geocoder', '~> 1.6', '>= 1.6.3'
 gem 'image_processing', '~> 1.2'
 gem 'jbuilder', '~> 2.7'

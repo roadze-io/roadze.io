@@ -1,15 +1,21 @@
 <component name="ProjectDictionaryState">
   <dictionary name="taurengroup">
     <words>
+      <w>authenticatable</w>
       <w>autoprefixer</w>
       <w>bootsnap</w>
       <w>byebug</w>
       <w>capybara</w>
+      <w>confirmable</w>
       <w>cookiebanner</w>
       <w>flexbox</w>
+      <w>geocoder</w>
       <w>jbuilder</w>
+      <w>registerable</w>
+      <w>rememberable</w>
       <w>roadze</w>
       <w>semibold</w>
+      <w>trackable</w>
       <w>turbolinks</w>
       <w>webdrivers</w>
       <w>webpacker</w>
