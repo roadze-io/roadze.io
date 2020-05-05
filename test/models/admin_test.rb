@@ -22,6 +22,7 @@
 #  reset_password_token   :string
 #  role                   :integer
 #  sign_in_count          :integer          default(0), not null
+#  time_zone              :string           default("Mountain Time (US & Canada)")
 #  unconfirmed_email      :string
 #  unlock_token           :string
 #  username               :string
