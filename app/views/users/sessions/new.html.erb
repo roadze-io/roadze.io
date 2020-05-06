@@ -1,26 +1,55 @@
-<h2>Log in</h2>
+<div class="mx-auto max-w-7xl">
+  <div class="min-h-screen flex items-center justify-center bg-gray-50 py-12 px-4 sm:px-6 lg:px-8">
+    <div class="max-w-md w-full">
+      <div class="text-center">
+        <%= link_to root_url do %>
+          <h1 class="text-4xl text-blue-600 font-bold logo-font">roadze<span class="text-sm">.io</span></h1>
+        <% end  %>
+        <h2 class="mt-6 text-center text-3xl leading-9 font-extrabold text-blue-700">
+          Sign in to your account
+        </h2>
+        <p class="mt-2 text-center text-sm leading-5 text-gray-600">
+          Or
+          <a href="#" class="font-medium text-blue-600 hover:text-blue-500 focus:outline-none focus:underline transition ease-in-out duration-150">
+            start your 14-day free trial
+          </a>
+        </p>
+      </div>
+      <%= form_for(resource, as: resource_name, url: session_path(resource_name), class: "mt-8") do |f| %>
+        <input type="hidden" name="remember" value="true" />
+        <div class="rounded-md shadow-sm">
+          <div>
+            <%= f.text_field :username, autofocus: true, autocomplete: "email", placeholder: 'Username', class: 'appearance-none rounded-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-t-md focus:outline-none focus:shadow-outline-blue focus:border-blue-300 focus:z-10 sm:text-sm sm:leading-5' %>
+          </div>
+          <div class="-mt-px">
+            <%= f.password_field :password, autocomplete: "current-password", placeholder: 'Password', class: 'appearance-none rounded-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-b-md focus:outline-none focus:shadow-outline-blue focus:border-blue-300 focus:z-10 sm:text-sm sm:leading-5' %>
+          </div>
+        </div>
 
-<%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-  <div class="field">
-    <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
-  </div>
+        <div class="mt-6 flex items-center justify-between">
+          <% if devise_mapping.rememberable? %>
+            <div class="flex items-center">
+              <%= f.check_box :remember_me, class: 'form-checkbox h-4 w-4 text-blue-600 transition duration-150 ease-in-out' %>
+              <%= f.label :remember_me, class: 'ml-2 block text-sm leading-5 text-gray-900' %>
+            </div>
+          <% end %>
 
-  <div class="field">
-    <%= f.label :password %><br />
-    <%= f.password_field :password, autocomplete: "current-password" %>
-  </div>
+          <div class="text-sm leading-5">
+            <%= link_to "Forgot your password?", new_password_path(resource_name), class: 'font-medium text-blue-600 hover:text-blue-500 focus:outline-none focus:underline transition ease-in-out duration-150' %>
+          </div>
+        </div>
 
-  <% if devise_mapping.rememberable? %>
-    <div class="field">
-      <%= f.check_box :remember_me %>
-      <%= f.label :remember_me %>
+        <div class="mt-6">
+          <button type="submit" class="group relative w-full flex justify-center py-2 px-4 border border-transparent text-sm leading-5 font-medium rounded-md text-white bg-blue-600 hover:bg-blue-500 focus:outline-none focus:border-blue-700 focus:shadow-outline-indigo active:bg-blue-700 transition duration-150 ease-in-out">
+            <span class="absolute left-0 inset-y-0 flex items-center pl-3">
+              <svg class="h-5 w-5 text-blue-500 group-hover:text-blue-400 transition ease-in-out duration-150" fill="currentColor" viewBox="0 0 20 20">
+                <path fill-rule="evenodd" d="M5 9V7a5 5 0 0110 0v2a2 2 0 012 2v5a2 2 0 01-2 2H5a2 2 0 01-2-2v-5a2 2 0 012-2zm8-2v2H7V7a3 3 0 016 0z" clip-rule="evenodd" />
+              </svg>
+            </span>
+            Sign in
+          </button>
+        </div>
+      <% end %>
     </div>
-  <% end %>
-
-  <div class="actions">
-    <%= f.submit "Log in" %>
   </div>
-<% end %>
-
-<%= render "users/shared/links" %>
+</div>

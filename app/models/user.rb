@@ -35,8 +35,16 @@
 #  index_users_on_username              (username) UNIQUE
 #
 class User < ApplicationRecord
-  # Include default devise modules. Others available are:
-  # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
+  enum roles: { owner: 0, super_user: 1, admin: 2 }
+
   devise :database_authenticatable, :registerable,
-         :recoverable, :rememberable, :validatable
+         :recoverable, :rememberable, :validatable,
+         :confirmable, :trackable, authentication_keys: [:username]
+
+  validates :email, uniqueness: false
+  validates :username, uniqueness: true
+
+  def will_save_change_to_email?
+    false
+  end
 end

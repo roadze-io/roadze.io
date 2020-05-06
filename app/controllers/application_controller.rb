@@ -2,11 +2,11 @@
 
 class ApplicationController < ActionController::Base
   include Pagy::Backend
-  before_action :validate_cookie_presnece, :set_time_zone
-
+  before_action :validate_cookie_presence
+  before_action :set_time_zone
   private
 
-  def validate_cookie_presnece
+  def validate_cookie_presence
     return unless cookies.present?
 
     @cookie = CookieAcceptance.find_by(accept_token: cookies[:roadze_cookie_acceptance]).present?
