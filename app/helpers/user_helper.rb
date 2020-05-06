@@ -1,2 +1,2 @@
-module FrontendPages::UserHelper
+module UserHelper
 end
