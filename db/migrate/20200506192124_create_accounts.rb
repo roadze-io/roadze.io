@@ -10,7 +10,10 @@ class CreateAccounts < ActiveRecord::Migration[6.0]
       t.boolean :is_active
       t.boolean :is_verified
 
+
+
       t.timestamps
     end
+      add_index :accounts, :company_name, unique: true
   end
 end

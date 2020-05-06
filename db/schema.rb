@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_05_06_200312) do
+ActiveRecord::Schema.define(version: 2020_05_06_202104) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -27,6 +27,8 @@ ActiveRecord::Schema.define(version: 2020_05_06_200312) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.boolean "add_to_public_directory", default: false
+    t.string "roadze_account_type"
+    t.index ["company_name"], name: "index_accounts_on_company_name", unique: true
   end
 
   create_table "admins", force: :cascade do |t|
@@ -123,8 +125,10 @@ ActiveRecord::Schema.define(version: 2020_05_06_200312) do
     t.boolean "is_locked"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.index ["email"], name: "index_users_on_email", unique: true
+    t.index ["confirmation_token"], name: "index_users_on_confirmation_token", unique: true
+    t.index ["email"], name: "index_users_on_email"
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
+    t.index ["username"], name: "index_users_on_username", unique: true
   end
 
 end
