@@ -23,6 +23,9 @@ end
 
 # Application Routes
 Rails.application.routes.draw do
+  namespace :frontend_pages do
+    get 'user/dashboard'
+  end
   constraints(Marketing) do
     root 'marketing#home'
     get 'features', to: 'marketing#features'
@@ -30,9 +33,29 @@ Rails.application.routes.draw do
     get 'company', to: 'marketing#company'
 
     resources :cookie_acceptances, only: %i[new create]
+    resources :public_directory, only: %i[index show]
   end
 
   constraints(Subscription) do
+    devise_for :users, path: '',
+                       path_names: { sign_in: 'login', sign_out: 'logout' },
+                       controllers: {
+                           confirmations: 'users/confirmations',
+                           passwords: 'users/passwords',
+                           sessions: 'users/sessions'
+                       }
+    namespace :frontend_pages, path: '' do
+      resources :accounts
+    end
+
+    devise_scope :user do
+      authenticated :user do
+        root to: 'frontend_pages/user#dashboard', as: :authenticated_user
+      end
+      unauthenticated do
+        root to: 'users/sessions#new', as: :unauthenticated_user
+      end
+    end
   end
 
   constraints(Support) do
@@ -47,7 +70,9 @@ Rails.application.routes.draw do
     namespace :backend_pages, path: '' do
       resources :bot_trackers, only: [:index]
       resources :page_visits, only: [:index]
+      resources :accounts, only: [:index]
     end
+
     devise_scope :admin do
       authenticated :admin do
         root to: 'backend_pages/admin#dashboard', as: :authenticated_admin
