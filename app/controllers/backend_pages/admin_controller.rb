@@ -6,9 +6,14 @@ module BackendPages
   class AdminController < ApplicationController
     before_action :authenticate_admin!
     def dashboard
-      @visits_today = PageVisit.where("created_at >= ?", time.in_time_zone(current_admin.time_zone).today).count
-      @visits_yesterday = PageVisit.where("created_at >= ?", time.in_time_zone(current_admin.time_zone).yesterday).count
+      # Calculate Today's Page Visits
+      @visits_today = PageVisit.where("created_at >= ?", Time.zone.now.beginning_of_day).count
+      @visits_yesterday = PageVisit.where("created_at >= ?", Time.zone.now.yesterday).count
       @delta = @visits_today - @visits_yesterday
+
+      # Calculate Today's Bot Hits
+      @bots_today = BotTracker.where("created_at >= ?", Time.zone.now)
     end
   end
 end
+
