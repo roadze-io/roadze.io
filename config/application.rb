@@ -17,7 +17,7 @@ module RoadzeBaseApplication
       config.action_mailer.raise_delivery_errors = true
     elsif Rails.env.production?
       config.action_mailer.delivery_method = :postmark
-      config.action_mailer.postmark_settings = { api_token: Rails.application.credentials[Rails.env.to_sym][:postmark][:api_token] }
+      config.action_mailer.postmark_settings = { api_token: Rails.application.credentials[Rails.env.to_sym][:postmark][:token] }
       config.action_mailer.default_url_options = { host: 'roadze.io' }
       config.action_mailer.raise_delivery_errors = false
     end
