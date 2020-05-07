@@ -157,11 +157,11 @@ Devise.setup do |config|
   # Invalidates all the remember me tokens when the user signs out.
   config.expire_all_remember_me_on_sign_out = true
 
-  # If true, extends the user's remember period when remembered via cookie.
+  # If true, extends the user's remember period when remembered via cookies_acceptances.
   # config.extend_remember_period = false
 
-  # Options to be passed to the created cookie. For instance, you can set
-  # secure: true in order to force SSL only cookies.
+  # Options to be passed to the created cookies_acceptances. For instance, you can set
+  # secure: true in order to force SSL only cookies_acceptances.
   # config.rememberable_options = {}
 
   # ==> Configuration for :validatable

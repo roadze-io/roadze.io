@@ -32,7 +32,7 @@ Rails.application.routes.draw do
     get 'pricing', to: 'marketing#pricing'
     get 'company', to: 'marketing#company'
 
-    resources :cookie_acceptances, only: %i[new create]
+    resources :cookies_acceptances, only: %i[new create]
     resources :public_directory, only: %i[index show]
   end
 
@@ -71,6 +71,7 @@ Rails.application.routes.draw do
       resources :bot_trackers, only: [:index]
       resources :page_visits, only: [:index]
       resources :accounts, only: [:index]
+      resources :cookies_acceptances, only: [:index]
     end
 
     devise_scope :admin do

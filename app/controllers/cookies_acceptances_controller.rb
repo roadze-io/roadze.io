@@ -1,4 +1,5 @@
-class CookieAcceptancesController < ApplicationController
+class CookiesAcceptancesController < ApplicationController
+
   def new
     @cookie_acceptance = CookieAcceptance.new
   end
@@ -10,12 +11,12 @@ class CookieAcceptancesController < ApplicationController
     respond_to do |format|
       if @cookie_acceptance.save
         cookies[:roadze_cookie_acceptance] = {
-            value: @cookie_acceptance.accept_token,
-            expires: 1.year.from_now
+          value: @cookie_acceptance.accept_token,
+          expires: 1.year.from_now
         }
-        format.js {render inline: 'location.reload();' }
+        format.js { render inline: 'location.reload();' }
       else
-        format.js {render inline: 'location.reload();' }
+        format.js { render inline: 'location.reload();' }
       end
     end
   end

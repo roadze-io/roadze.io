@@ -74,7 +74,7 @@ ActiveRecord::Schema.define(version: 2020_05_06_202104) do
     t.string "action"
   end
 
-  create_table "cookie_acceptances", force: :cascade do |t|
+  create_table "cookies_acceptances", force: :cascade do |t|
     t.string "name"
     t.string "accept_token"
     t.string "ip_address"

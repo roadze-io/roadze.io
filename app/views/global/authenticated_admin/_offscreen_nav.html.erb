@@ -50,6 +50,18 @@
             Bot tracker
           <% end %>
         <% end %>
+        <% if current_request?(controller: 'bot_trackers', action: ['index']) %>
+          <%= link_to backend_pages_cookies_acceptances_url, class: 'mt-2 group flex items-center px-4 py-2 text-base leading-6 font-medium text-white bg-red-700 focus:outline-none focus:bg-red-700 hover:bg-red-500 transition ease-in-out duration-150' do %>
+            <i class="far fa-cookie-bite fa-lg mr-4 text-gray-300 group-hover:text-gray-300 group-focus:text-gray-300 transition ease-in-out duration-150"></i>
+            Cookie acceptance
+          <% end %>
+        <% else %>
+          <%= link_to backend_pages_cookies_acceptances_url, class: 'mt-2 group flex items-center px-4 py-2 text-base leading-6 font-medium text-white hover:bg-red-700 focus:outline-none focus:bg-red-700 hover:bg-red-500 transition ease-in-out duration-150' do %>
+            <i class="far fa-cookie-bite fa-lg mr-4 text-gray-300 group-hover:text-gray-300 group-focus:text-gray-300 transition ease-in-out duration-150"></i>
+            Cookie acceptance
+          <% end %>
+        <% end %>
+
       </nav>
     </div>
   </div>

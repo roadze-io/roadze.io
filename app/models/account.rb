@@ -25,6 +25,8 @@ class Account < ApplicationRecord
   has_one :owner, class_name: 'User'
   accepts_nested_attributes_for :owner
 
+  has_many :users
+
   before_validation :downcase_company_name, :configure_account
 
   validates_presence_of :company_name, :roadze_account_type, :trial_ends

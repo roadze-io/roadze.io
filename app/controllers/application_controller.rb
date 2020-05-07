@@ -2,8 +2,8 @@
 
 class ApplicationController < ActionController::Base
   include Pagy::Backend
-  before_action :validate_cookie_presence
-  before_action :set_time_zone
+  before_action :validate_cookie_presence, :handle_cross_domain_flash, :set_time_zone
+
   private
 
   def validate_cookie_presence
@@ -19,4 +19,11 @@ class ApplicationController < ActionController::Base
 
     end
   end
+
+  def handle_cross_domain_flash
+    return unless params[:notice] || params[:success] || params[:error] || params[:alert]
+
+    redirect_to request.path, notice: params[:notice], success: params[:success], error: params[:error], alert: params[:alert]
+  end
+
 end

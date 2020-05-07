@@ -4,9 +4,12 @@ class Users::SessionsController < Devise::SessionsController
   # before_action :configure_sign_in_params, only: [:create]
 
   # GET /resource/sign_in
-  # def new
-  #   super
-  # end
+  def new
+    @page_title       = 'Login'
+    @page_description = 'roadze login page'
+    @page_keywords    = 'Site, Login, Logistics, Load Board, Freight'
+    super
+  end
 
   # POST /resource/sign_in
   # def create

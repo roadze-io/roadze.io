@@ -2,9 +2,12 @@
 
 class Users::PasswordsController < Devise::PasswordsController
   # GET /resource/password/new
-  # def new
-  #   super
-  # end
+  def new
+    @page_title       = 'Password Reset'
+    @page_description = 'roadze password reset page'
+    @page_keywords    = 'Site, Password Reset, Logistics, Load Board, Freight'
+    super
+  end
 
   # POST /resource/password
   # def create

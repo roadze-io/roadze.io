@@ -41,8 +41,12 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable,
          :confirmable, :trackable, authentication_keys: [:username]
 
+  belongs_to :account
+
   validates :email, uniqueness: false
   validates :username, uniqueness: true
+
+  validates_presence_of :username
 
   def will_save_change_to_email?
     false

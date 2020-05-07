@@ -1,6 +1,6 @@
 # == Schema Information
 #
-# Table name: cookie_acceptances
+# Table name: cookies_acceptances
 #
 #  id           :bigint           not null, primary key
 #  accept_token :string

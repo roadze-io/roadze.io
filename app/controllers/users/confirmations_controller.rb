@@ -2,9 +2,12 @@
 
 class Users::ConfirmationsController < Devise::ConfirmationsController
   # GET /resource/confirmation/new
-  # def new
-  #   super
-  # end
+  def new
+    @page_title       = 'Request Confirmation'
+    @page_description = 'roadze request new account confirmation page'
+    @page_keywords    = 'Site, Confirmation Request, Logistics, Load Board, Freight'
+    super
+  end
 
   # POST /resource/confirmation
   # def create

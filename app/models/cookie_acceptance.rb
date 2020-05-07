@@ -1,6 +1,6 @@
 # == Schema Information
 #
-# Table name: cookie_acceptances
+# Table name: cookies_acceptances
 #
 #  id           :bigint           not null, primary key
 #  accept_token :string
@@ -21,6 +21,6 @@ class CookieAcceptance < ApplicationRecord
       break unless self.class.exists?(accept_token: accept_token)
     end
     self.accepted = true
-    self.name = 'roadze.io cookie acceptance'
+    self.name = 'roadze.io cookies_acceptances acceptance'
   end
 end

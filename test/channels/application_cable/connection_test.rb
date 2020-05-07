@@ -3,8 +3,8 @@
 require 'test_helper'
 
 class ApplicationCable::ConnectionTest < ActionCable::Connection::TestCase
-  # test "connects with cookies" do
-  #   cookies.signed[:user_id] = 42
+  # test "connects with cookies_acceptances" do
+  #   cookies_acceptances.signed[:user_id] = 42
   #
   #   connect
   #
