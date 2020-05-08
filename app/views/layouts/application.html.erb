@@ -24,14 +24,14 @@
   <% elsif user_signed_in?  %>
     <body class="font-sans h-screen flex overflow-hidden bg-primary-bg pb-32 md:pb-0" x-data="{ sidebarOpen: false }" @keydown.window.escape="sidebarOpen = false">
     <!-- Off-canvas menu for mobile -->
-    <%= render "global/authenticated_admin/offscreen_nav" %>
+    <%= render "global/authenticated_user/offscreen_nav" %>
 
     <!-- Static sidebar for desktop -->
-    <%= render "global/authenticated_admin/side_nav" %>
+    <%= render "global/authenticated_user/side_nav" %>
 
     <!-- Content -->
     <div class="flex flex-col w-0 flex-1 overflow-hidden">
-      <%= render "global/authenticated_admin/top_nav" %>
+      <%= render "global/authenticated_user/top_nav" %>
       <%= render partial: "global/flash/messages" %>
 
       <main class="flex-1 relative z-0 overflow-y-auto py-6 focus:outline-none"  tabindex="0">

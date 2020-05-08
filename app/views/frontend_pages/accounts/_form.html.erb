@@ -1,5 +1,61 @@
-<%= form_for(@account, url: frontend_pages_accounts_url, method: "POST", html: { class: "flex w-full h-screen items-center justify-center" }) do |a| %>
-  <div class="border-2 border-black p-3 w-full md:w-3/4 lg:w-5/12">
+<div class="mx-auto max-w-7xl">
+  <%= form_for(@account, url: frontend_pages_accounts_url, method: "POST", html: { class: "flex w-full h-screen justify-center" }) do |a| %>
+    <div class="pt-12 sm:pt-16 lg:pt-20 w-11/12 md:w-1/2 lg:w-5/12">
+      <div class="max-w-screen-xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center">
+          <h2 class="text-3xl leading-9 font-extrabold text-blue-600 sm:text-4xl sm:leading-10 lg:text-5xl lg:leading-none">
+            Logistics Redefined
+          </h2>
+          <p class="mt-4 text-sm leading-7 text-gray-500">
+            Complete the form below to apply for early access to <span class="text-sm text-blue-700 logo-font font-semibold">roadze<span class="text-xs">.io</span></span>! No credit card required. No obligations to continue.
+          </p>
+        </div>
+      </div>
+      <div class=" w-full border border-gray-300 mt-8 p-5 bg-white rounded-lg shadow-xl">
+        <div class="w-full mb-4 text-center">
 
-  </div>
-<% end %>
+        </div>
+        <div>
+          <%= a.hidden_field :roadze_account_type, value: "#{params[:roadze_account_type]}" %>
+        </div>
+        <div class="w-full mb-2">
+          <%= a.label :company_name, 'Company Name', class: 'block text-sm leading-5 font-medium text-gray-700 body-font' %>
+          <%= a.text_field :company_name, class: 'form-input block w-full pl-7 pr-12 sm:text-sm sm:leading-5 logo-font' %>
+        </div>
+        <%= a.fields_for :owner do |o| %>
+          <div class="flex flex-wrap w-full mb-2">
+            <div class="w-full md:w-1/2 mb-2 md:mb-0">
+              <%= o.label :first_name, 'First name', class: 'block text-sm leading-5 font-medium text-gray-700 body-font' %>
+              <%= o.text_field :first_name, class: 'form-input block w-full pl-7 pr-12 sm:text-sm sm:leading-5 logo-font md:mr-1' %>
+            </div>
+            <div class="w-full md:w-1/2 mb-2 md:mb-0">
+              <%= o.label :last_name, 'Last name', class: 'block text-sm leading-5 font-medium text-gray-700 body-font md:ml-1' %>
+              <%= o.text_field :last_name, class: 'form-input block w-full pl-7 pr-12 sm:text-sm sm:leading-5 logo-font md:ml-1' %>
+            </div>
+          </div>
+          <div class="w-full mb-2">
+            <%= o.label :username, 'Username', class: 'block text-sm leading-5 font-medium text-gray-700 body-font' %>
+            <%= o.text_field :username, class: 'form-input block w-full pl-7 pr-12 sm:text-sm sm:leading-5 logo-font' %>
+          </div>
+          <div class="w-full mb-2">
+            <%= o.label :email, 'Email address', class: 'block text-sm leading-5 font-medium text-gray-700 body-font' %>
+            <%= o.email_field :email, class: 'form-input block w-full pl-7 pr-12 sm:text-sm sm:leading-5 logo-font' %>
+          </div>
+          <div class="flex flex-wrap w-full mb-2">
+            <div class="w-full md:w-1/2 mb-2 md:mb-0">
+              <%= o.label :password, 'Password', class: 'block text-sm leading-5 font-medium text-gray-700 body-font' %>
+              <%= o.password_field :password, class: 'form-input block w-full pl-7 pr-12 sm:text-sm sm:leading-5 logo-font md:mr-1' %>
+            </div>
+            <div class="w-full md:w-1/2 mb-2 md:mb-0">
+              <%= o.label :password_confirmation, 'Confirm password', class: 'block text-sm leading-5 font-medium text-gray-700 body-font md:ml-1' %>
+              <%= o.password_field :password_confirmation, class: 'form-input block w-full pl-7 pr-12 sm:text-sm sm:leading-5 logo-font md:ml-1' %>
+            </div>
+          </div>
+        <% end  %>
+
+        <%= a.submit 'Apply for early access', class: 'w-full p-2 mt-3 text-center logo-font text-white font-semibold bg-blue-700 hover:bg-blue-600 rounded-lg shadow-md' %>
+      </div>
+
+    </div>
+  <% end %>
+</div>

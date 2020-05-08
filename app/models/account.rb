@@ -39,9 +39,9 @@ class Account < ApplicationRecord
 
   def configure_account
     self.is_active = true
+    self.is_verified = false
     self.trial_ends = 14.days.from_now
     self.trial_end_warning = 12.days.from_now
-    self.is_verified = false
     self.add_to_public_directory = true
   end
 
